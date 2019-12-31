@@ -36,6 +36,12 @@
     [entryPoints.http]
     address = ":80"
 
+    [entryPoints.traefik]
+    address = ":8080"
+
+    [entryPoints.ping]
+    address = ":8081"
+
 ################################################################
 # Traefik logs configuration
 ################################################################
@@ -122,7 +128,7 @@
   # Optional
   # Default: "traefik"
   #
-  # entryPoint = "traefik"
+  entryPoint = "ping"
 
 ################################################################
 # Docker configuration backend
@@ -151,4 +157,4 @@
 # Optional
 # Default: true
 #
-# exposedByDefault = true
+exposedByDefault = false

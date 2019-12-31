@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  traefik:
+    image: traefik:${IMAGE_TAG_TRAEFIK}
+    networks:
+      webgateway:
+        aliases:
+          - proxy.test
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/etc/traefik/traefik.toml
+    labels:
+      - traefik.enable=true
+      - traefik.traefik.port=8080
+      - traefik.traefik.frontend.rule=Host:proxy.test
+      - traefik.ping.port=8081
+      - traefik.ping.frontend.rule=Host:ping.test
+
+networks:
+  webgateway:

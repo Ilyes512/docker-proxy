@@ -1,0 +1,22 @@
+version: "2"
+
+silent: false
+
+tasks:
+  up:
+    desc: Start Traefik 1.* container
+    dir: traefik-1
+    cmds:
+      - docker-compose up -d
+
+  down:
+    desc: Stop and remove Traefik 1.* container
+    dir: traefik-1
+    cmds:
+      - docker-compose down -v
+
+  stop:
+    desc: Stop Traefik 1.* container
+    dir: traefik-1
+    cmds:
+      - docker-compose stop

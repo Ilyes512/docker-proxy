@@ -1,0 +1,6 @@
+version: "2"
+
+includes:
+  t1: traefik-1
+
+silent: false

@@ -2,7 +2,8 @@ version: "3.7"
 
 services:
   traefik:
-    image: traefik:${IMAGE_TAG_TRAEFIK}
+    image: ilyes512/proxy-t1:latest
+    build: .
     networks:
       webgateway:
         aliases:

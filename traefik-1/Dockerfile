@@ -1,3 +1,3 @@
-FROM traefik:1.7.24-alpine
+FROM traefik:v1.7.30-alpine
 
 COPY traefik.toml /etc/traefik/traefik.toml
